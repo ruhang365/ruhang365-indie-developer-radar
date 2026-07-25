@@ -1,0 +1,48 @@
+name: Sync Independent Developer Radar
+
+on:
+  schedule:
+    - cron: '15 20 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: independent-developer-radar-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - name: Run tests
+        run: npm test
+
+      - name: Sync upstream facts and generate original metadata
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: npm run sync
+
+      - name: Validate generated data
+        run: npm run sync:check
+
+      - name: Commit changes
+        run: |
+          if git diff --quiet -- data reports; then
+            echo "No source changes."
+            exit 0
+          fi
+
+          git config user.name "ruhang365-bot"
+          git config user.email "bot@ruhang365.cn"
+          git add data reports
+          git commit -m "data: sync independent developer radar"
+          git push

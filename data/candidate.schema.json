@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ruhang365/ruhang365-indie-developer-radar/blob/main/data/candidate.schema.json",
+  "title": "Ruhang365 Independent Developer Radar Candidate",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "url",
+    "status",
+    "source_file",
+    "source_line",
+    "source_sha",
+    "category",
+    "review_status"
+  ],
+  "properties": {
+    "id": { "type": "string", "minLength": 16, "maxLength": 16 },
+    "name": { "type": "string", "minLength": 1 },
+    "url": { "type": "string", "format": "uri" },
+    "status": { "enum": ["building", "live", "inactive", "unknown"] },
+    "developer_name": { "type": ["string", "null"] },
+    "developer_url": { "type": ["string", "null"], "format": "uri-reference" },
+    "source_date_label": { "type": ["string", "null"] },
+    "source_file": { "type": "string" },
+    "source_line": { "type": "integer", "minimum": 1 },
+    "source_fingerprint": { "type": "string", "minLength": 64, "maxLength": 64 },
+    "source_repo": { "type": "string" },
+    "source_url": { "type": "string", "format": "uri" },
+    "source_sha": { "type": "string", "minLength": 40, "maxLength": 40 },
+    "source_license_status": { "const": "unknown" },
+    "category": { "type": "string" },
+    "capability_tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "risk_flags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "review_status": { "const": "candidate" }
+  },
+  "additionalProperties": false
+}

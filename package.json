@@ -1,0 +1,16 @@
+{
+  "name": "ruhang365-indie-developer-radar",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "description": "把中国独立开发者公开项目转成可追踪、可筛选、可验证的机会雷达。",
+  "license": "MIT",
+  "scripts": {
+    "sync": "node src/sync.mjs",
+    "sync:check": "node src/sync.mjs --check",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
