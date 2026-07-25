@@ -7,6 +7,7 @@
   "license": "MIT",
   "scripts": {
     "sync": "node src/sync.mjs",
+    "sync:force": "node src/sync.mjs --force",
     "sync:check": "node src/sync.mjs --check",
     "test": "node --test"
   },

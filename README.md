@@ -30,6 +30,8 @@ cd ruhang365-indie-developer-radar
 npm test && npm run sync
 ```
 
+需要在上游 SHA 未变化时重建分类数据，可执行 `npm run sync:force`。
+
 同步完成后：
 
 1. 在 `data/candidates.json` 按 `category` 选一个你熟悉的方向；

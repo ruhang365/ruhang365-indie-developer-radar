@@ -10,6 +10,7 @@ const SOURCE_FILES = (process.env.SOURCE_FILES || 'README.md,pages/README-Progra
   .map((item) => item.trim())
   .filter(Boolean)
 const CHECK_ONLY = process.argv.includes('--check')
+const FORCE = process.argv.includes('--force')
 const ROOT = path.resolve(import.meta.dirname, '..')
 
 async function fetchJson(url) {
@@ -43,12 +44,30 @@ async function readPreviousCandidates() {
   }
 }
 
+async function readPreviousState() {
+  try {
+    return JSON.parse(await fs.readFile(path.join(ROOT, 'data/source-state.json'), 'utf8'))
+  } catch {
+    return null
+  }
+}
+
 function toJson(value) {
   return `${JSON.stringify(value, null, 2)}\n`
 }
 
 async function main() {
   const commit = await fetchJson(`https://api.github.com/repos/${SOURCE_REPO}/commits/${SOURCE_BRANCH}`)
+  const previousState = await readPreviousState()
+  if (!CHECK_ONLY && !FORCE && previousState?.source_sha === commit.sha) {
+    console.log(JSON.stringify({
+      ok: true,
+      changed: false,
+      source_sha: commit.sha,
+      reason: 'source_sha_unchanged',
+    }))
+    return
+  }
   const previous = await readPreviousCandidates()
   const parsed = []
 
