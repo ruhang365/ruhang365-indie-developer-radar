@@ -1,9 +1,7 @@
 name: Sync Independent Developer Radar
 
 on:
-  schedule:
-    # Run before RHZL's unified external-source sync (19:30 UTC).
-    - cron: '45 18 * * *'
+  # Scheduling is centralized in the OpenClaw source-sync orchestrator.
   workflow_dispatch:
 
 permissions:
