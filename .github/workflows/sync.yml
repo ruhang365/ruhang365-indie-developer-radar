@@ -2,7 +2,8 @@ name: Sync Independent Developer Radar
 
 on:
   schedule:
-    - cron: '15 20 * * *'
+    # Run before RHZL's unified external-source sync (19:30 UTC).
+    - cron: '45 18 * * *'
   workflow_dispatch:
 
 permissions:
