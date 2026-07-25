@@ -6,12 +6,12 @@
 
 ## 你可以直接使用的资产
 
-- [结构化候选数据](./data/candidates.json)：项目名称、链接、状态、开发者、来源位置、分类、标签和风险提示。
-- [候选数据 Schema](./data/candidate.schema.json)：供其他工具稳定读取和校验字段。
-- [来源状态](./data/source-state.json)：当前同步到的上游提交 SHA 和文件范围。
-- [最新变化报告](./reports/latest.json)：新增、移除、状态变化和品类统计。
-- [独立开发机会验证卡](./docs/opportunity-validation-card.md)：把一个项目转成七天需求验证任务。
-- [数据来源与授权边界](./DATA_PROVENANCE.md)：明确哪些是上游事实，哪些是入行365原创资产。
+- [结构化候选数据](https://github.com/ruhang365/ruhang365-indie-developer-radar/blob/main/data/candidates.json)：项目名称、链接、状态、开发者、来源位置、分类、标签和风险提示。
+- [候选数据 Schema](https://github.com/ruhang365/ruhang365-indie-developer-radar/blob/main/data/candidate.schema.json)：供其他工具稳定读取和校验字段。
+- [来源状态](https://github.com/ruhang365/ruhang365-indie-developer-radar/blob/main/data/source-state.json)：当前同步到的上游提交 SHA 和文件范围。
+- [最新变化报告](https://github.com/ruhang365/ruhang365-indie-developer-radar/blob/main/reports/latest.json)：新增、移除、状态变化和品类统计。
+- [独立开发机会验证卡](https://github.com/ruhang365/ruhang365-indie-developer-radar/blob/main/docs/opportunity-validation-card.md)：把一个项目转成七天需求验证任务。
+- [数据来源与授权边界](https://github.com/ruhang365/ruhang365-indie-developer-radar/blob/main/DATA_PROVENANCE.md)：明确哪些是上游事实，哪些是入行365原创资产。
 
 ## 这不是另一个项目榜单
 
@@ -34,7 +34,7 @@ npm test && npm run sync
 
 1. 在 `data/candidates.json` 按 `category` 选一个你熟悉的方向；
 2. 打开候选项的 `url` 和 `source_url`，核对产品与来源；
-3. 复制[机会验证卡](./docs/opportunity-validation-card.md)，在七天内完成 5 次真实访谈。
+3. 复制[机会验证卡](https://github.com/ruhang365/ruhang365-indie-developer-radar/blob/main/docs/opportunity-validation-card.md)，在七天内完成 5 次真实访谈。
 
 ## 数据结构
 
@@ -71,4 +71,4 @@ GitHub Action 每天执行：
 
 同步代码、Schema、分类规则、报告结构、文档和机会验证卡采用 MIT License。
 
-上游仓库未声明许可证，因此上游清单及第三方项目资料不包含在本项目的 MIT 授权中。完整边界见 [DATA_PROVENANCE.md](./DATA_PROVENANCE.md)。
+上游仓库未声明许可证，因此上游清单及第三方项目资料不包含在本项目的 MIT 授权中。完整边界见 [DATA_PROVENANCE.md](https://github.com/ruhang365/ruhang365-indie-developer-radar/blob/main/DATA_PROVENANCE.md)。
