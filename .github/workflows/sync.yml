@@ -25,6 +25,9 @@ jobs:
       - name: Run tests
         run: npm test
 
+      - name: Validate AI opportunity patterns
+        run: npm run opportunities:validate
+
       - name: Sync upstream facts and generate original metadata
         env:
           GITHUB_TOKEN: ${{ github.token }}

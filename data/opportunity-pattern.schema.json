@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ruhang365/ruhang365-indie-developer-radar/blob/main/data/opportunity-pattern.schema.json",
+  "title": "Ruhang365 AI Opportunity Pattern",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "track",
+    "summary",
+    "target_users",
+    "work_node",
+    "problem",
+    "deliverable",
+    "entry_requirements",
+    "first_customer_paths",
+    "validation",
+    "candidate_filter",
+    "risk_flags",
+    "promise_boundary",
+    "status"
+  ],
+  "properties": {
+    "id": { "type": "string", "minLength": 3 },
+    "title": { "type": "string", "minLength": 1 },
+    "track": { "type": "string", "minLength": 3 },
+    "summary": { "type": "string", "minLength": 1 },
+    "target_users": { "$ref": "#/$defs/nonEmptyStrings" },
+    "work_node": { "type": "string", "minLength": 1 },
+    "problem": { "type": "string", "minLength": 1 },
+    "deliverable": { "type": "string", "minLength": 1 },
+    "entry_requirements": { "$ref": "#/$defs/nonEmptyStrings" },
+    "first_customer_paths": { "$ref": "#/$defs/nonEmptyStrings" },
+    "validation": {
+      "type": "object",
+      "required": [
+        "duration_days",
+        "actions",
+        "evidence_required",
+        "output",
+        "continue_if",
+        "stop_if"
+      ],
+      "properties": {
+        "duration_days": { "type": "integer", "minimum": 1, "maximum": 14 },
+        "actions": { "$ref": "#/$defs/nonEmptyStrings" },
+        "evidence_required": { "$ref": "#/$defs/nonEmptyStrings" },
+        "output": { "type": "string", "minLength": 1 },
+        "continue_if": { "$ref": "#/$defs/nonEmptyStrings" },
+        "stop_if": { "$ref": "#/$defs/nonEmptyStrings" }
+      },
+      "additionalProperties": false
+    },
+    "candidate_filter": {
+      "type": "object",
+      "required": ["categories", "keywords"],
+      "properties": {
+        "categories": { "$ref": "#/$defs/nonEmptyStrings" },
+        "keywords": { "$ref": "#/$defs/nonEmptyStrings" }
+      },
+      "additionalProperties": false
+    },
+    "risk_flags": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "promise_boundary": { "const": "no_income_guarantee" },
+    "status": { "enum": ["hypothesis", "pilot", "validated", "retired"] }
+  },
+  "$defs": {
+    "nonEmptyStrings": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    }
+  },
+  "additionalProperties": false
+}

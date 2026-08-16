@@ -13,4 +13,13 @@
 - 数据质量测试；
 - 面向具体行业或场景的原创分析。
 
+新增 AI 机会模式时，请修改 `data/opportunity-patterns.json`，并确保：
+
+- 目标用户和工作节点具体；
+- 有真实可验收的交付物；
+- 写明找到首批用户的方法；
+- 七天验证同时包含动作、证据、继续条件和停止条件；
+- 使用 `candidate_filter` 连接现有项目候选，不把机会模式混入 `candidates.json`；
+- 运行 `npm test && npm run opportunities:validate`。
+
 Pull Request 不得复制上游大段项目介绍，也不得提交密钥、Cookie、个人隐私或未经授权的付费数据。
