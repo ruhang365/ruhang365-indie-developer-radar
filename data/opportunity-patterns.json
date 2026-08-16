@@ -1,0 +1,373 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-08-16T00:00:00.000Z",
+  "positioning": "把 AI 机会分类从灵感列表转成可执行、可证伪的七天验证任务。",
+  "inspiration_refs": [
+    {
+      "type": "benchmark",
+      "title": "AiMoneyHunter",
+      "url": "https://github.com/bleedline/aimoneyhunter",
+      "captured_at": "2026-08-15",
+      "transformation": "借鉴 AI 内容、视频、图片、文案、音频和技术服务的机会分类；所有用户、交付、证据与验证结构由入行365重新设计。"
+    }
+  ],
+  "patterns": [
+    {
+      "id": "ai-content-operations-service",
+      "title": "AI 内容运营服务",
+      "track": "ai-content-operations",
+      "summary": "帮助缺少稳定运营能力的业务方完成选题、资料整理、内容草稿和复盘。",
+      "target_users": [
+        "没有专职内容运营的本地商家",
+        "内容更新不稳定的小型品牌或专业服务者"
+      ],
+      "work_node": "业务方需要规划下一周内容，但临时追热点、多人协作和资料散落让产出反复中断时",
+      "problem": "内容生产依赖临时灵感，无法稳定复用素材，也没有统一标准判断哪些主题值得继续。",
+      "deliverable": "一周选题表、三条可审核内容草稿和一张发布后复盘表",
+      "entry_requirements": [
+        "能访谈一位真实业务负责人",
+        "能使用至少一种通用 AI 工具完成资料整理和草稿",
+        "能对事实、品牌口径和最终发布内容做人工复核"
+      ],
+      "first_customer_paths": [
+        "已有客户、朋友或社群里经营真实业务的人",
+        "本地门店、专业顾问或小型品牌的公开内容账号"
+      ],
+      "validation": {
+        "duration_days": 7,
+        "actions": [
+          "访谈 5 位目标用户，核对他们最近一次内容生产过程",
+          "选择 1 位用户，用其真实资料完成最小交付",
+          "让用户按可用性、准确性和节省返工三个维度验收"
+        ],
+        "evidence_required": [
+          "5 份最近一次内容生产记录",
+          "1 份真实使用反馈",
+          "1 份修改前后差异和返工原因"
+        ],
+        "output": "机会验证记录和一份可展示的匿名内容运营样例",
+        "continue_if": [
+          "至少 3 位用户确认同一问题反复发生",
+          "最小交付被真实使用或进入发布审核"
+        ],
+        "stop_if": [
+          "无法在 48 小时内找到 5 位目标用户",
+          "用户只需要一次性代写，且不愿提供真实资料或反馈"
+        ]
+      },
+      "candidate_filter": {
+        "categories": ["ai-content", "creator-tools", "commerce"],
+        "keywords": ["内容", "选题", "营销", "写作", "社媒"]
+      },
+      "risk_flags": ["unsupported-income-claim", "platform-policy", "confidential-input"],
+      "promise_boundary": "no_income_guarantee",
+      "status": "hypothesis"
+    },
+    {
+      "id": "ai-video-production-service",
+      "title": "AI 短视频制作服务",
+      "track": "ai-video-service",
+      "summary": "把脚本、分镜、素材生成和剪辑连接成可审核的短视频首稿交付。",
+      "target_users": [
+        "有产品和真实素材但缺少视频制作能力的商家",
+        "需要稳定更新短视频的专业创作者"
+      ],
+      "work_node": "用户已经确定一个要表达的主题或产品，但卡在脚本、画面组织和首稿制作时",
+      "problem": "工具很多但流程断裂，素材、口径和镜头连续性反复返工，最终难以形成可发布首稿。",
+      "deliverable": "一条 15 至 30 秒短视频首稿、分镜表、素材清单和修改记录",
+      "entry_requirements": [
+        "能完成基础剪辑或使用可控的视频生成工具",
+        "能取得用户提供素材的使用确认",
+        "能在发布前人工核对人物、产品和事实"
+      ],
+      "first_customer_paths": [
+        "已有商品或服务但长期只发图文的商家",
+        "需要把长内容拆成短视频的讲师或专业创作者"
+      ],
+      "validation": {
+        "duration_days": 7,
+        "actions": [
+          "访谈 5 位近期做过短视频的目标用户",
+          "选择 1 个真实主题完成一版低成本首稿",
+          "记录脚本、素材和剪辑各环节的返工次数"
+        ],
+        "evidence_required": [
+          "5 份近期视频制作过程记录",
+          "1 条真实首稿及修改意见",
+          "用户是否愿意继续使用该流程的行为证据"
+        ],
+        "output": "一条匿名短视频案例和一份制作验收清单",
+        "continue_if": [
+          "至少 3 位用户在同一制作节点反复卡住",
+          "首稿能进入真实账号的审核或发布流程"
+        ],
+        "stop_if": [
+          "需求只依赖不可控的单次爆款结果",
+          "素材权利或人物授权无法确认"
+        ]
+      },
+      "candidate_filter": {
+        "categories": ["ai-content", "creator-tools"],
+        "keywords": ["视频", "剪辑", "字幕", "数字人", "分镜"]
+      },
+      "risk_flags": ["media-rights", "likeness-consent", "platform-policy"],
+      "promise_boundary": "no_income_guarantee",
+      "status": "hypothesis"
+    },
+    {
+      "id": "ai-product-image-service",
+      "title": "AI 商品视觉服务",
+      "track": "ai-image-service",
+      "summary": "使用真实商品资料完成主图、场景图和活动视觉的可审核样稿。",
+      "target_users": [
+        "缺少稳定设计资源的小型电商卖家",
+        "需要快速测试视觉方向的本地品牌"
+      ],
+      "work_node": "商品信息和卖点已经确定，但拍摄、抠图、场景搭建或多尺寸适配成本过高时",
+      "problem": "卖家需要更快验证视觉方向，却容易在生成图片中丢失商品结构、品牌事实或平台规格。",
+      "deliverable": "一张主视觉、三张场景图、尺寸适配表和商品事实核对清单",
+      "entry_requirements": [
+        "拥有真实商品图片和卖点资料",
+        "能使用图片编辑或生成工具进行局部修正",
+        "能按平台规格和商品事实做最终验收"
+      ],
+      "first_customer_paths": [
+        "有新品上架计划的熟人商家",
+        "公开页面视觉明显陈旧但商品信息完整的小型店铺"
+      ],
+      "validation": {
+        "duration_days": 7,
+        "actions": [
+          "访谈 5 位近期做过商品图的卖家",
+          "为 1 个真实商品制作两套低保真方向",
+          "让用户基于准确性、可用性和修改成本选择方向"
+        ],
+        "evidence_required": [
+          "5 份最近一次商品视觉制作记录",
+          "1 次真实方向选择",
+          "商品结构和文案事实核对结果"
+        ],
+        "output": "一套匿名商品视觉样例和一张制作验收表",
+        "continue_if": [
+          "至少 3 位卖家确认同一视觉交付问题",
+          "至少一套样稿进入上架或进一步制作"
+        ],
+        "stop_if": [
+          "用户只追求无法定义的主观风格",
+          "真实商品资料不足以核对生成结果"
+        ]
+      },
+      "candidate_filter": {
+        "categories": ["creator-tools", "commerce", "ai-content"],
+        "keywords": ["图片", "商品图", "设计", "海报", "电商"]
+      },
+      "risk_flags": ["product-accuracy", "media-rights", "unsupported-product-claim"],
+      "promise_boundary": "no_income_guarantee",
+      "status": "hypothesis"
+    },
+    {
+      "id": "ai-business-copy-service",
+      "title": "AI 商业文案服务",
+      "track": "ai-copy-service",
+      "summary": "基于真实业务资料完成页面、活动或内容文案，并保留事实核对和人工审核。",
+      "target_users": [
+        "产品价值说不清的小型服务商",
+        "需要把专业资料转成用户表达的创始人或顾问"
+      ],
+      "work_node": "用户已有产品、客户和资料，但需要制作落地页、活动页或一组对外内容时",
+      "problem": "原始资料专业但分散，直接让模型生成容易出现空泛卖点、事实错误和品牌口径不一致。",
+      "deliverable": "一页核心信息架构、一个落地页文案首稿和事实核对表",
+      "entry_requirements": [
+        "能访谈业务负责人并取得真实资料",
+        "能区分事实、判断和营销表达",
+        "能根据用户修改意见完成至少一轮迭代"
+      ],
+      "first_customer_paths": [
+        "正在更新官网或活动页的熟人企业",
+        "公开表达专业但用户难以理解的顾问或服务商"
+      ],
+      "validation": {
+        "duration_days": 7,
+        "actions": [
+          "访谈 5 位近期写过销售或品牌文案的用户",
+          "为 1 位用户整理信息架构并完成首稿",
+          "让业务负责人逐条核对事实、语气和行动入口"
+        ],
+        "evidence_required": [
+          "5 份最近一次文案制作记录",
+          "1 份真实资料到文案的修改链路",
+          "1 次用户确认或真实页面采用记录"
+        ],
+        "output": "一份匿名落地页文案案例和事实核对模板",
+        "continue_if": [
+          "至少 3 位用户反复遇到资料很多但表达不清的问题",
+          "首稿被真实采用或进入页面制作"
+        ],
+        "stop_if": [
+          "用户无法提供真实产品和客户资料",
+          "交付依赖虚构效果、评价或身份背书"
+        ]
+      },
+      "candidate_filter": {
+        "categories": ["ai-content", "commerce", "productivity"],
+        "keywords": ["文案", "写作", "营销", "落地页", "品牌"]
+      },
+      "risk_flags": ["unsupported-claim", "confidential-input", "fabricated-testimonial"],
+      "promise_boundary": "no_income_guarantee",
+      "status": "hypothesis"
+    },
+    {
+      "id": "ai-audio-production-service",
+      "title": "AI 音频制作服务",
+      "track": "ai-sound-service",
+      "summary": "帮助有真实录音素材的用户完成清理、摘要、片头片尾和多渠道音频首稿。",
+      "target_users": [
+        "有访谈或课程录音但缺少后期能力的创作者",
+        "需要把长录音整理成节目资产的小型团队"
+      ],
+      "work_node": "录音已经完成，但噪音、结构、摘要和节目包装阻碍内容发布时",
+      "problem": "长录音后期耗时，自动处理又容易改变说话者原意、使用不清楚的音乐或误用他人声音。",
+      "deliverable": "一段 3 至 5 分钟音频样稿、时间轴、文字摘要和声音素材清单",
+      "entry_requirements": [
+        "拥有录音素材的处理授权",
+        "能使用基础音频编辑工具",
+        "能让原说话者复核语义和成品"
+      ],
+      "first_customer_paths": [
+        "已有访谈、播客或课程录音的熟人创作者",
+        "持续举办线上分享但没有沉淀音频内容的社群"
+      ],
+      "validation": {
+        "duration_days": 7,
+        "actions": [
+          "访谈 5 位近期处理过长录音的用户",
+          "选择一段真实授权录音完成最小后期样稿",
+          "记录自动处理后必须人工修正的内容"
+        ],
+        "evidence_required": [
+          "5 份最近一次音频后期记录",
+          "1 份样稿和说话者复核意见",
+          "音乐、声音和录音素材清单"
+        ],
+        "output": "一段匿名音频案例和一份音频后期检查清单",
+        "continue_if": [
+          "至少 3 位用户确认后期和整理是持续瓶颈",
+          "样稿通过原说话者复核并进入发布准备"
+        ],
+        "stop_if": [
+          "用户无法确认录音或声音使用权限",
+          "需求核心是冒充特定人物声音"
+        ]
+      },
+      "candidate_filter": {
+        "categories": ["creator-tools", "ai-content"],
+        "keywords": ["音频", "播客", "声音", "音乐", "转录"]
+      },
+      "risk_flags": ["voice-consent", "music-rights", "meaning-distortion"],
+      "promise_boundary": "no_income_guarantee",
+      "status": "hypothesis"
+    },
+    {
+      "id": "ai-workflow-automation-service",
+      "title": "AI 工作流自动化服务",
+      "track": "ai-automation-service",
+      "summary": "把高频、规则清楚的重复任务改造成带人工确认和回退方式的轻量自动化。",
+      "target_users": [
+        "重复整理表格、邮件、文档和客户信息的小型团队",
+        "已经使用多个 SaaS 但流程仍靠人工搬运的业务人员"
+      ],
+      "work_node": "同一批数据需要在多个工具间反复复制、分类、提醒或生成固定格式输出时",
+      "problem": "手工搬运耗时且容易遗漏，但直接做全自动系统又会放大错误、权限和维护风险。",
+      "deliverable": "现状流程图、一个带人工确认的自动化原型、运行记录和回退说明",
+      "entry_requirements": [
+        "能观察一次完整真实流程",
+        "能使用至少一种自动化工具或脚本环境",
+        "能识别需要保留人工确认的高风险步骤"
+      ],
+      "first_customer_paths": [
+        "经常手工整理客户、订单或内容资料的熟人团队",
+        "公开招聘运营助理或数据整理岗位的小型企业"
+      ],
+      "validation": {
+        "duration_days": 7,
+        "actions": [
+          "访谈 5 位执行同类重复任务的用户",
+          "记录 1 次真实流程的步骤、输入、异常和耗时",
+          "只自动化一个低风险节点并让用户真实运行"
+        ],
+        "evidence_required": [
+          "5 份最近一次任务记录",
+          "1 份自动化前后运行记录",
+          "异常、人工确认和回退测试结果"
+        ],
+        "output": "一个可回退的自动化原型和一份运行验收记录",
+        "continue_if": [
+          "任务每周重复发生且规则足够稳定",
+          "真实运行减少了明确的搬运或遗漏问题"
+        ],
+        "stop_if": [
+          "流程本身尚未稳定或每次输入完全不同",
+          "必须绕过权限、平台规则或人工批准才能运行"
+        ]
+      },
+      "candidate_filter": {
+        "categories": ["productivity", "developer-tools", "commerce"],
+        "keywords": ["自动化", "工作流", "表格", "邮件", "数据"]
+      },
+      "risk_flags": ["credential-exposure", "automation-overreach", "third-party-dependency"],
+      "promise_boundary": "no_income_guarantee",
+      "status": "hypothesis"
+    },
+    {
+      "id": "focused-ai-tool-validation",
+      "title": "垂直 AI 工具验证",
+      "track": "ai-product-builder",
+      "summary": "从熟悉行业的一个高频问题切入，先验证需求，再决定是否开发完整工具。",
+      "target_users": [
+        "能接触到某一类真实职业用户的独立开发者",
+        "希望把服务流程逐步产品化的专业从业者"
+      ],
+      "work_node": "用户已经观察到一个重复问题，但还没有证据证明值得投入完整产品开发时",
+      "problem": "看到别人做过类似产品就开始复制功能，容易忽略目标用户、现有替代方案和真实付费行为。",
+      "deliverable": "一张问题假设卡、一个可点击或人工服务的最小演示物、五次访谈记录和继续/调整/停止结论",
+      "entry_requirements": [
+        "熟悉一个具体行业或工作场景",
+        "48 小时内能接触至少 5 位目标用户",
+        "愿意先用演示物或人工服务验证，而不是先写完整产品"
+      ],
+      "first_customer_paths": [
+        "自己所在行业的同事、客户或社群",
+        "现有服务流程中反复提出同类问题的用户"
+      ],
+      "validation": {
+        "duration_days": 7,
+        "actions": [
+          "从雷达中筛出 3 个相关真实产品并核对现状",
+          "访谈 5 位目标用户最近一次解决该问题的过程",
+          "制作一个只验证最关键假设的演示物"
+        ],
+        "evidence_required": [
+          "3 个真实产品对照",
+          "5 份用户原话和行为记录",
+          "1 次演示物使用或明确拒绝的行为证据"
+        ],
+        "output": "一份可证伪的机会验证档案和下一步决定",
+        "continue_if": [
+          "问题反复发生且现有替代方案存在明确损失",
+          "用户愿意投入时间、数据、试用或其他真实成本"
+        ],
+        "stop_if": [
+          "需求主要来自自己的想象或礼貌性认可",
+          "目标用户无法接触，或现有方案已经足够便宜简单"
+        ]
+      },
+      "candidate_filter": {
+        "categories": ["developer-tools", "productivity", "ai-content", "commerce"],
+        "keywords": ["AI", "工具", "效率", "工作流", "服务"]
+      },
+      "risk_flags": ["build-before-validation", "unsupported-market-claim", "confidential-input"],
+      "promise_boundary": "no_income_guarantee",
+      "status": "hypothesis"
+    }
+  ]
+}

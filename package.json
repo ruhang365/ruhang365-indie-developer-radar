@@ -9,6 +9,7 @@
     "sync": "node src/sync.mjs",
     "sync:force": "node src/sync.mjs --force",
     "sync:check": "node src/sync.mjs --check",
+    "opportunities:validate": "node src/validate-opportunities.mjs",
     "test": "node --test"
   },
   "engines": {
