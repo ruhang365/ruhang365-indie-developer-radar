@@ -21,6 +21,8 @@
 
 `data/opportunity-patterns.json` 是独立维护的机会假设层；`data/candidates.json` 仍只保存真实项目候选。两者通过 `candidate_filter` 连接，不共享对象身份或验证状态。
 
+`data/opportunity-cases.json` 把外部标题或方向转成入行365原创案例合同。外部来源只证明该方向曾被提出；案例的用户、流程、交付、验收、证据与停止条件由入行365重新设计，在取得真实试点证据前统一标记为 `hypothesis` 与 `source_lead_only`。
+
 ## MIT License 覆盖范围
 
 本仓库的 MIT License 仅覆盖入行365原创的：

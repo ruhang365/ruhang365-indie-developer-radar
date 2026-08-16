@@ -22,4 +22,6 @@
 - 使用 `candidate_filter` 连接现有项目候选，不把机会模式混入 `candidates.json`；
 - 运行 `npm test && npm run opportunities:validate`。
 
+新增 AI 机会案例时，请修改 `data/opportunity-cases.json`，并确保案例归属一个现有机会模式，包含真实输入、工作步骤、交付物、验收标准、首次客户路径和七天验证合同。外部文章或标题只能作为 `source_lead_only`，不能据此标记为 `validated`；验证状态必须由真实使用证据和最近核验时间支持。
+
 Pull Request 不得复制上游大段项目介绍，也不得提交密钥、Cookie、个人隐私或未经授权的付费数据。
