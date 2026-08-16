@@ -25,7 +25,7 @@ jobs:
       - name: Run tests
         run: npm test
 
-      - name: Validate AI opportunity patterns
+      - name: Validate AI opportunity patterns and cases
         run: npm run opportunities:validate
 
       - name: Sync upstream facts and generate original metadata

@@ -2,7 +2,7 @@
 
 把公开项目名单和 AI 机会分类从“看别人做了什么”，变成“我下一步该验证什么”。
 
-这个项目包含两个互不混淆的数据层：`candidates` 保存真实项目候选，`opportunity patterns` 保存入行365重新设计的机会验证路径。项目持续跟踪 [`1c7/chinese-independent-developer`](https://github.com/1c7/chinese-independent-developer) 的公开变化，并参考 [`bleedline/aimoneyhunter`](https://github.com/bleedline/aimoneyhunter) 的 AI 机会分类重新设计首批七条机会模式。
+这个项目包含三个互不混淆的数据层：`candidates` 保存真实项目候选，`opportunity patterns` 保存入行365重新设计的机会验证路径，`opportunity cases` 保存可执行但仍需真实验证的原创案例。项目持续跟踪 [`1c7/chinese-independent-developer`](https://github.com/1c7/chinese-independent-developer) 的公开变化，并参考 [`bleedline/aimoneyhunter`](https://github.com/bleedline/aimoneyhunter) 的 AI 机会分类与案例线索重新设计首批资产。
 
 ## 你可以直接使用的资产
 
@@ -10,6 +10,8 @@
 - [候选数据 Schema](https://github.com/ruhang365/ruhang365-indie-developer-radar/blob/main/data/candidate.schema.json)：供其他工具稳定读取和校验字段。
 - [AI 机会模式](https://github.com/ruhang365/ruhang365-indie-developer-radar/blob/main/data/opportunity-patterns.json)：七条可执行机会路径，包含用户、工作节点、交付物、首批用户入口和七天验证标准。
 - [机会模式 Schema](https://github.com/ruhang365/ruhang365-indie-developer-radar/blob/main/data/opportunity-pattern.schema.json)：锁定机会模式的输入、交付、证据和继续/停止契约。
+- [AI 机会案例](https://github.com/ruhang365/ruhang365-indie-developer-radar/blob/main/data/opportunity-cases.json)：首批 12 个案例假设，包含真实输入、工作步骤、交付物、验收标准、首次客户路径和七天验证。
+- [机会案例 Schema](https://github.com/ruhang365/ruhang365-indie-developer-radar/blob/main/data/opportunity-case.schema.json)：约束案例归属、证据状态和结果承诺边界。
 - [来源状态](https://github.com/ruhang365/ruhang365-indie-developer-radar/blob/main/data/source-state.json)：当前同步到的上游提交 SHA 和文件范围。
 - [最新变化报告](https://github.com/ruhang365/ruhang365-indie-developer-radar/blob/main/reports/latest.json)：新增、移除、状态变化和品类统计。
 - [独立开发机会验证卡](https://github.com/ruhang365/ruhang365-indie-developer-radar/blob/main/docs/opportunity-validation-card.md)：把一个项目转成七天需求验证任务。
@@ -39,7 +41,7 @@ npm test && npm run opportunities:validate && npm run sync
 
 1. 在 `data/opportunity-patterns.json` 选择一个你熟悉、能接触真实用户的机会模式；
 2. 使用其中的 `candidate_filter` 到 `data/candidates.json` 查看相关真实项目并核对现状；
-3. 复制[机会验证卡](https://github.com/ruhang365/ruhang365-indie-developer-radar/blob/main/docs/opportunity-validation-card.md)，在七天内完成 5 次真实访谈和 1 次最小交付。
+3. 从 `data/opportunity-cases.json` 选择一个案例假设，或复制[机会验证卡](https://github.com/ruhang365/ruhang365-indie-developer-radar/blob/main/docs/opportunity-validation-card.md)，在七天内完成 5 次真实访谈和 1 次最小交付。
 
 ## 数据结构
 
@@ -82,6 +84,8 @@ npm test && npm run opportunities:validate && npm run sync
 
 `hypothesis` 表示这是一条等待真实用户验证的机会路径，不代表收益预测或商业保证。
 
+案例默认同样是 `hypothesis`，外部标题只能记为 `source_lead_only`。只有取得真实使用证据并记录最近核验时间后，案例才能升级为 `validated`。
+
 ## 自动更新
 
 GitHub Action 由统一调度按周执行：
@@ -89,7 +93,7 @@ GitHub Action 由统一调度按周执行：
 1. 运行解析测试；
 2. 获取上游最新提交和三个公开列表；
 3. 生成候选数据、来源状态和变化报告；
-4. 验证手工维护的 AI 机会模式；
+4. 验证手工维护的 AI 机会模式和案例；
 5. 只有同步数据发生变化时才提交。
 
 ## 授权

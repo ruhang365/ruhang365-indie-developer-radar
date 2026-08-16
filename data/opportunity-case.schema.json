@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ruhang365/ruhang365-indie-developer-radar/blob/main/data/opportunity-case.schema.json",
+  "title": "Ruhang365 AI Opportunity Case",
+  "type": "object",
+  "required": ["id", "title", "opportunity_pattern_id", "summary", "target_user", "work_node", "problem", "starting_materials", "workflow_steps", "deliverable", "acceptance_criteria", "first_customer_path", "validation", "source_refs", "risk_flags", "promise_boundary", "status", "evidence_status", "last_verified_at"],
+  "properties": {
+    "id": { "type": "string", "minLength": 3 },
+    "title": { "type": "string", "minLength": 1 },
+    "opportunity_pattern_id": { "type": "string", "minLength": 3 },
+    "summary": { "type": "string", "minLength": 1 },
+    "target_user": { "type": "string", "minLength": 1 },
+    "work_node": { "type": "string", "minLength": 1 },
+    "problem": { "type": "string", "minLength": 1 },
+    "starting_materials": { "$ref": "#/$defs/nonEmptyStrings" },
+    "workflow_steps": { "$ref": "#/$defs/nonEmptyStrings" },
+    "deliverable": { "type": "string", "minLength": 1 },
+    "acceptance_criteria": { "$ref": "#/$defs/nonEmptyStrings" },
+    "first_customer_path": { "type": "string", "minLength": 1 },
+    "validation": {
+      "type": "object",
+      "required": ["duration_days", "actions", "evidence_required", "output", "continue_if", "stop_if"],
+      "properties": {
+        "duration_days": { "type": "integer", "minimum": 1, "maximum": 14 },
+        "actions": { "$ref": "#/$defs/nonEmptyStrings" },
+        "evidence_required": { "$ref": "#/$defs/nonEmptyStrings" },
+        "output": { "type": "string", "minLength": 1 },
+        "continue_if": { "$ref": "#/$defs/nonEmptyStrings" },
+        "stop_if": { "$ref": "#/$defs/nonEmptyStrings" }
+      },
+      "additionalProperties": false
+    },
+    "source_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["type", "title", "url", "captured_at", "transformation"],
+        "properties": {
+          "type": { "enum": ["benchmark_lead", "primary_evidence", "pilot_evidence"] },
+          "title": { "type": "string", "minLength": 1 },
+          "url": { "type": "string", "format": "uri" },
+          "captured_at": { "type": "string", "format": "date" },
+          "transformation": { "type": "string", "minLength": 1 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "risk_flags": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "promise_boundary": { "const": "no_outcome_guarantee" },
+    "status": { "enum": ["hypothesis", "pilot", "validated", "retired"] },
+    "evidence_status": { "enum": ["source_lead_only", "pilot_evidence", "validated_evidence"] },
+    "last_verified_at": { "type": ["string", "null"], "format": "date-time" }
+  },
+  "$defs": {
+    "nonEmptyStrings": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    }
+  },
+  "additionalProperties": false
+}
