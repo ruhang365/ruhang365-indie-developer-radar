@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0.0",
-  "generated_at": "2026-08-15T04:00:14.339Z",
+  "generated_at": "2026-08-22T04:00:13.070Z",
   "source_repo": "1c7/chinese-independent-developer",
   "source_branch": "master",
-  "source_sha": "f495cab61f380442400069d67f6c9e26556eedf0",
+  "source_sha": "2861d2d0ff63ee551354eaad037c050e2535b599",
   "source_files": [
     "README.md",
     "pages/README-Programmer-Edition.md",
