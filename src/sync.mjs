@@ -5,7 +5,10 @@ import { buildCategoryCounts, buildDiff, dedupeCandidates, parseSourceFile } fro
 
 const SOURCE_REPO = process.env.SOURCE_REPO || '1c7/chinese-independent-developer'
 const SOURCE_BRANCH = process.env.SOURCE_BRANCH || 'master'
-const SOURCE_FILES = (process.env.SOURCE_FILES || 'README.md,pages/README-Programmer-Edition.md,pages/README-Game.md')
+// The upstream repository now keeps its maintained catalogue in README.md.
+// Fetch every configured file before writing anything, so a removed upstream
+// path fails closed and leaves the last successful local dataset intact.
+const SOURCE_FILES = (process.env.SOURCE_FILES || 'README.md')
   .split(',')
   .map((item) => item.trim())
   .filter(Boolean)
