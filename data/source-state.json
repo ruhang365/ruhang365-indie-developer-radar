@@ -1,13 +1,11 @@
 {
   "schema_version": "1.0.0",
-  "generated_at": "2026-09-05T04:00:17.912Z",
+  "generated_at": "2026-09-12T09:55:56.186Z",
   "source_repo": "1c7/chinese-independent-developer",
   "source_branch": "master",
-  "source_sha": "2761cee2f0f32573cd31606a19e432861cdc63b5",
+  "source_sha": "0dabe775e4292ac16ff69589b541f951ee6d50da",
   "source_files": [
-    "README.md",
-    "pages/README-Programmer-Edition.md",
-    "pages/README-Game.md"
+    "README.md"
   ],
   "source_license_status": "unknown",
   "redistribution_mode": "facts_and_original_derived_metadata_only"
