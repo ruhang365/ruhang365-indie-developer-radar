@@ -4,6 +4,12 @@
 
 这个项目包含三个互不混淆的数据层：`candidates` 保存真实项目候选，`opportunity patterns` 保存入行365重新设计的机会验证路径，`opportunity cases` 保存可执行但仍需真实验证的原创案例。项目持续跟踪 [`1c7/chinese-independent-developer`](https://github.com/1c7/chinese-independent-developer) 的公开变化，并参考 [`bleedline/aimoneyhunter`](https://github.com/bleedline/aimoneyhunter) 的 AI 机会分类与案例线索重新设计首批资产。
 
+## 项目边界
+
+- 本仓是候选数据、机会模式、机会案例、Schema、周更报告和来源状态的唯一真相源。
+- 本仓不建设独立网站，也不保存 RHZL 用户状态。
+- RHZL 只读取这些公开契约，负责项目浏览、场景执行和 Journey；不复制第二份候选数据，也不改写源仓数据契约。
+
 ## 你可以直接使用的资产
 
 - [结构化候选数据](https://github.com/ruhang365/ruhang365-indie-developer-radar/blob/main/data/candidates.json)：项目名称、链接、状态、开发者、来源位置、分类、标签和风险提示。
@@ -21,7 +27,7 @@
 
 原始名单和机会合集适合发现线索，这个仓库负责补五层能力：
 
-1. **可同步**：每天检查上游提交，记录来源 SHA。
+1. **可同步**：按周检查上游提交，记录来源 SHA。
 2. **可计算**：把项目状态、来源位置和分类转成 JSON。
 3. **可判断**：标记敏感密钥、金融、健康和成人内容等需要额外复核的场景。
 4. **可匹配**：先按自己的用户、能力和工作节点选择机会模式，再查看相关真实项目。
