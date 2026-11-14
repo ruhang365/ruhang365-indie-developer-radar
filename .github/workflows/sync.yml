@@ -34,6 +34,8 @@ jobs:
         run: npm run sync
 
       - name: Validate generated data
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         run: npm run sync:check
 
       - name: Commit changes
